@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperHéroes-Ada</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="main-banner">
+        <div class="banner-content">
+            <h1 class="comic-title">Buscador de Superhéroes</h1>
+            <button id="tema-toggle" class="button is-dark is-small">MODO OSCURO</button>
+        </div>
+    </header>
+
+    <div class="container mt-5 px-3">
+        <form id="search-form" class="field has-addons">
+            <div class="control is-expanded">
+                <input id="search-input" class="input is-medium" type="text" placeholder="Busca tu héroe...">
+            </div>
+            <div class="control">
+                <button type="submit" class="button is-info is-medium">BUSCAR</button>
+            </div>
+        </form>
+
+        <div class="level">
+            <div class="level-left"><p id="results-counter" class="subtitle is-6">Buscando...</p></div>
+            <div class="level-right">
+                <div class="select">
+                    <select id="sort-order">
+                        <option value="asc">A-Z</option>
+                        <option value="desc">Z-A</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="results-grid" class="columns is-multiline"></div>
+
+        <nav class="pagination is-centered mt-6" role="navigation">
+            <button id="btn-first" class="pagination-previous">Primero</button>
+            <button id="btn-prev" class="pagination-previous">Anterior</button>
+            <button id="btn-next" class="pagination-next">Siguiente</button>
+            <button id="btn-last" class="pagination-next">Último</button>
+            <p id="current-page" class="pagination-list">Página 1 de 1</p>
+        </nav>
+    </div>
+
+    <div id="hero-modal" class="modal">
+        <div class="modal-background" onclick="document.querySelector('#hero-modal').classList.remove('is-active')"></div>
+        <div class="modal-content is-huge">
+            <div id="modal-content" class="box"></div>
+        </div>
+        <button class="modal-close is-large" onclick="document.querySelector('#hero-modal').classList.remove('is-active')"></button>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -23,7 +23,7 @@ export const renderizarDetalles = (h) => {
         <div class="columns">
             <div class="column is-5">
              <figure class="image">
-                <img src="${h.image}" class="image-modal">
+                <img src="${h.image.url}" class="image-modal">
              </figure>
             </div>
             <div class="column is-7">
